@@ -1,8 +1,6 @@
 require 'sinatra'
 require 'shotgun'
 
-
-
 get '/' do
   "Hello World"
 end
@@ -24,7 +22,12 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
+get '/catform' do
+  erb(:catform)
+end
+
+post '/namedcat' do
+  params
   @name = params[:name]
   erb(:index)
 end
